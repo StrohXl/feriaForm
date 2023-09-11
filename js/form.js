@@ -21,14 +21,17 @@ const optionsShow = document.getElementById('options')
 
 // Evitar las letras, puntos y guion
 rut.addEventListener("keydown", function (event) {
-    var tecla = event.which || event.keyCode;
-    if (tecla >= 45 && tecla <= 57 || tecla === 8) {
-      // Permitir dígitos del 0 al 9
-      return true;
-    } else {
-      // Bloquear cualquier otra tecla
-      event.preventDefault();
-      return false;
+
+    // Obtiene el código de la tecla presionada
+    const keyCode = event.keyCode || event.which;
+    // Obtiene la tecla correspondiente al código
+    const key = event.key
+    // Verifica si la tecla presionada es un número (entre 0 y 9)
+    if (
+ key === '.' || key === '-'
+    ) {
+        // Evita que se ingrese el carácter no numérico
+        event.preventDefault();
     }
 });
 
