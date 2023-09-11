@@ -24,12 +24,12 @@ rut.addEventListener("keydown", function (event) {
 
     // Obtiene el código de la tecla presionada
     const keyCode = event.keyCode || event.which;
-
+    // Obtiene la tecla correspondiente al código
+    const key = String.fromCharCode(keyCode);
     // Verifica si la tecla presionada es un número (entre 0 y 9)
     if (
-
         keyCode > 75 && keyCode < 96 ||
-        keyCode > 105 || keyCode == 46 || keyCode == 45
+        keyCode > 105 || keyCode == 46 || keyCode == 45 || key === '.' || key === '-'
     ) {
         // Evita que se ingrese el carácter no numérico
         event.preventDefault();
@@ -176,7 +176,7 @@ const sendData = () => {
             value: timeZonedDate
         }
     )
-    
+
     // Enviar a Excell
     let json = JSON.stringify(formDataFormated)
     XHR.addEventListener("load", function (event) {
