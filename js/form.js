@@ -23,10 +23,10 @@ const optionsShow = document.getElementById('options')
 rut.addEventListener("keydown", function (event) {
 
     // Obtiene el código de la tecla presionada
-    const keyCode = event.keyCode || event.which;
+    let keyCode = event.keyCode || event.which;
     // Obtiene la tecla correspondiente al código
-    const key = String.fromCharCode(keyCode);
-    alert(key)
+    let key = String.fromCharCode(keyCode);
+    alert(key, keyCode)
     // Verifica si la tecla presionada es un número (entre 0 y 9)
     if (
         keyCode > 75 && keyCode < 96 ||
